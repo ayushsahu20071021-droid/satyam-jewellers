@@ -3,7 +3,7 @@ name: Deploy Satyam Jewellers to GitHub Pages
 on:
   push:
     branches:
-      - arena/01a1058e-satyam-jewellers
+      - main
   workflow_dispatch:
 
 permissions:
@@ -19,7 +19,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the deployment branch
+      - name: Check out the main branch
         uses: actions/checkout@v4
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -39,7 +39,7 @@ jobs:
       - name: Disable Jekyll processing for Next.js assets
         run: touch out/.nojekyll
       - name: Upload site artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: out
 
