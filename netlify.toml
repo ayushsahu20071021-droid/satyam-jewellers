@@ -4,3 +4,4 @@
 
 [build.environment]
   NODE_VERSION = "22"
+  NEXT_PUBLIC_SITE_URL = "https://satyam-jewlerrs.netlify.app"
